@@ -28,7 +28,7 @@ func GetSaramaConfigFromYAMLString(yaml string) (*sarama.Config, error) {
 	}
 
 	c := sarama.NewConfig()
-	if err := v.Unmarshal(&c); err != nil {
+	if err := v.Unmarshal(c); err != nil {
 		return nil, fmt.Errorf("failed to unmarshal configuration. %w", err)
 	}
 	return c, nil
